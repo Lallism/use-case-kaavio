@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Quicksand&display=swap');
+
+:root {
+    --light-gray: #9babb2;
+    --light-green: #91db69;
+    --blue: #0099db;
+    --red: #e43b44;
+    --green: #3e8948;
+    --yellow: #feae34;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+header {
+    padding: 2px 8px;
+    margin-bottom: 8px;
+    background-color: var(--light-green);
+    box-shadow: 0 1px 2px var(--light-gray);
+}
+
+main {
+    margin: auto;
+    width: 70%;
+}
+
+button {
+    font-family: 'Quicksand', sans-serif;
+    margin: 4px;
+    padding: 6px 12px;
+    background-color: white;
+    border: solid var(--light-gray) 1px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px var(--light-gray);
+    transition: 0.25s;
+}
+
+button:hover {
+    background-color: var(--light-green);
+    border-color: var(--light-green);
+}
+
+input {
+    margin: 4px 2px;
+    outline: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.votes {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.box {
+    margin: 4px;
+    padding: 4px 8px;
+    border: solid var(--light-gray) 1px;
+    border-radius: 4px;
+}
+
+.box:hover {
+    border-color: var(--light-green);
+}
+
+.title {
+    margin: 8px 2px;
+}
+
+.desc {
+    margin: 8px 2px;
+}
+
+.voteAmount {
+    margin: 0 8px;
+}
+
+.delete {
+    align-self: end;
+}
+
+.bar {
+    margin: 4px;
+    height: 24px;
+    border: solid var(--light-gray) 1px;
+    border-radius: 4px;
+}
+
+.red {
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--red);
+}
+
+.blue {
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--blue);
+}
+
+.green {
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--green);
+}
+
+.yellow {
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--yellow);
+}
