@@ -176,24 +176,28 @@ function updateVotes(poll) {
     const votes4percent = polldata[poll - 1].votes4 / totalVotes * 100;
 
     const votes1Amount = polls[poll].lastElementChild.children[0].firstElementChild.lastElementChild;
-    const votes2Amount = polls[poll].lastElementChild.children[1].firstElementChild.lastElementChild;
-    const votes3Amount = polls[poll].lastElementChild.children[2].firstElementChild.lastElementChild;
-    const votes4Amount = polls[poll].lastElementChild.children[3].firstElementChild.lastElementChild;
-
-    votes1Amount.innerText = polldata[poll - 1].votes1 + " ääntä - " + votes1percent.toFixed(0) + "%";
-    votes2Amount.innerText = polldata[poll - 1].votes2 + " ääntä - " + votes2percent.toFixed(0) + "%";
-    votes3Amount.innerText = polldata[poll - 1].votes3 + " ääntä - " + votes3percent.toFixed(0) + "%";
-    votes4Amount.innerText = polldata[poll - 1].votes4 + " ääntä - " + votes4percent.toFixed(0) + "%";
-
     const votes1bar = polls[poll].lastElementChild.children[0].lastElementChild.firstElementChild;
-    const votes2bar = polls[poll].lastElementChild.children[1].lastElementChild.firstElementChild;
-    const votes3bar = polls[poll].lastElementChild.children[2].lastElementChild.firstElementChild;
-    const votes4bar = polls[poll].lastElementChild.children[3].lastElementChild.firstElementChild;
-
+    votes1Amount.innerText = polldata[poll - 1].votes1 + " ääntä - " + votes1percent.toFixed(0) + "%";
     votes1bar.setAttribute("style", "width: " + votes1percent + "%");
+
+    const votes2Amount = polls[poll].lastElementChild.children[1].firstElementChild.lastElementChild;
+    votes2Amount.innerText = polldata[poll - 1].votes2 + " ääntä - " + votes2percent.toFixed(0) + "%";
+    const votes2bar = polls[poll].lastElementChild.children[1].lastElementChild.firstElementChild;
     votes2bar.setAttribute("style", "width: " + votes2percent + "%");
-    votes3bar.setAttribute("style", "width: " + votes3percent + "%");
-    votes4bar.setAttribute("style", "width: " + votes4percent + "%");
+
+    if (polldata[poll - 1].option3 != "") {
+        const votes3Amount = polls[poll].lastElementChild.children[2].firstElementChild.lastElementChild;
+        votes3Amount.innerText = polldata[poll - 1].votes3 + " ääntä - " + votes3percent.toFixed(0) + "%";
+        const votes3bar = polls[poll].lastElementChild.children[2].lastElementChild.firstElementChild;
+        votes3bar.setAttribute("style", "width: " + votes3percent + "%");
+    }
+    
+    if (polldata[poll - 1].option4 != "") {
+        const votes4Amount = polls[poll].lastElementChild.children[3].firstElementChild.lastElementChild;
+        votes4Amount.innerText = polldata[poll - 1].votes4 + " ääntä - " + votes4percent.toFixed(0) + "%";
+        const votes4bar = polls[poll].lastElementChild.children[3].lastElementChild.firstElementChild;
+        votes4bar.setAttribute("style", "width: " + votes4percent + "%");
+    }
 }
 
 function activate(number) {
